@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.SagaSample.Models", "MassTransit.SagaSample.Models\MassTransit.SagaSample.Models.csproj", "{5A45DF27-F7B1-4223-A97E-2DAEEB6B198E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.SagaSample.Products.Business", "MassTransit.SagaSample.Products.Business\MassTransit.SagaSample.Products.Business.csproj", "{32253E73-477F-4B9D-9B79-1A1E30D4E4D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.SagaSample.Warehouse.Business", "MassTransit.SagaSample.Warehouse.Business\MassTransit.SagaSample.Warehouse.Business.csproj", "{BF04BB0D-96F2-4135-927E-5CECFCC3295D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A45DF27-F7B1-4223-A97E-2DAEEB6B198E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A45DF27-F7B1-4223-A97E-2DAEEB6B198E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A45DF27-F7B1-4223-A97E-2DAEEB6B198E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A45DF27-F7B1-4223-A97E-2DAEEB6B198E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32253E73-477F-4B9D-9B79-1A1E30D4E4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32253E73-477F-4B9D-9B79-1A1E30D4E4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32253E73-477F-4B9D-9B79-1A1E30D4E4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32253E73-477F-4B9D-9B79-1A1E30D4E4D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF04BB0D-96F2-4135-927E-5CECFCC3295D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF04BB0D-96F2-4135-927E-5CECFCC3295D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF04BB0D-96F2-4135-927E-5CECFCC3295D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF04BB0D-96F2-4135-927E-5CECFCC3295D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1515D18-C1FD-40E1-8337-E51255F545DE}
+	EndGlobalSection
+EndGlobal
