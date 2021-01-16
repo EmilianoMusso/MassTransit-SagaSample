@@ -1,14 +1,24 @@
-﻿using MassTransit.SagaSample.Models.Events;
-using MassTransit.SagaSample.Warehouse.Business.Consumers;
+﻿using MassTransit.SagaSample.Warehouse.Business.Consumers;
+using MassTransit.SagaSample.Warehouse.Business.Persistor;
 using MassTransit.Util;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.InMemory;
 
 namespace MassTransit.SagaSample.Warehouse.Business
 {
     class Program
     {
         static IBus _bus;
-        static void Main(string[] args)
+        static MemoryDbContext _context;
+
+        static void Main()
         {
+            var options = new DbContextOptionsBuilder<MemoryDbContext>()
+                            .UseInMemoryDatabase(databaseName: "TEST")
+                            .Options;
+
+            _context = new MemoryDbContext(options);
+
             _bus = CreateRabbitBus();
 
             while (true) { }
@@ -22,7 +32,7 @@ namespace MassTransit.SagaSample.Warehouse.Business
 
                 config.ReceiveEndpoint("masstransit-sample-" + nameof(ProductGeneratedConsumer), c =>
                 {
-                    c.Consumer(() => new ProductGeneratedConsumer());
+                    c.Consumer(() => new ProductGeneratedConsumer(_context));
                 });
             });
 

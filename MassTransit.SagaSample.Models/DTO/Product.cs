@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MassTransit.SagaSample.Models.DTO
+﻿namespace MassTransit.SagaSample.Models.DTO
 {
     public class Product: BaseEntity
     {

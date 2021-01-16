@@ -1,5 +1,6 @@
 ﻿using MassTransit.SagaSample.Models.DTO;
 using MassTransit.SagaSample.Models.Events;
+using MassTransit.SagaSample.Products.Business.Consumers;
 using MassTransit.Util;
 using System;
 using System.Timers;
@@ -11,14 +12,15 @@ namespace MassTransit.SagaSample.Products.Business
         static IBus _bus;
         static bool _isRunning;
 
-        static void Main(string[] args)
+        static string[] productCodes = new string[] { "TEST001", "TEST002", "TEST003", "TEST004", "TEST005" };
+        static void Main()
         {
             _bus = CreateRabbitBus();
             _isRunning = true;
 
             var t = new Timer()
             {
-                Interval = 10_000,
+                Interval = 5000,
                 Enabled = true
             };
 
@@ -28,12 +30,12 @@ namespace MassTransit.SagaSample.Products.Business
 
                 var product = new Product()
                 {
-                    Code = string.Concat("PRD", Environment.TickCount),
-                    Quantity = random.Next(1, 1000)
+                    Code = productCodes[random.Next(productCodes.Length-1)],
+                    Quantity = random.Next(0, 1000)
                 };
 
                 _bus.Publish<IProductGenerated>(new { CorrelationId = NewId.NextGuid(), Product = product });
-                Console.WriteLine($"Product generated: {product.ToString()}");
+                Console.WriteLine($"Product generated: {product}");
 
                 var key = Console.ReadKey();
                 if (key.Key == ConsoleKey.Q) _isRunning = false;
@@ -49,6 +51,11 @@ namespace MassTransit.SagaSample.Products.Business
             var bus = Bus.Factory.CreateUsingRabbitMq(config =>
             {
                 config.Host("rabbitmq://localhost");
+
+                config.ReceiveEndpoint("masstransit-sample-" + nameof(WarehouseCheckedConsumer), c =>
+                {
+                    c.Consumer(() => new WarehouseCheckedConsumer());
+                });
             });
 
             TaskUtil.Await(() => bus.StartAsync());

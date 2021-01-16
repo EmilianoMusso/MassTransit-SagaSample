@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.SagaSample.Models", "MassTransit.SagaSample.Models\MassTransit.SagaSample.Models.csproj", "{5A45DF27-F7B1-4223-A97E-2DAEEB6B198E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransit.SagaSample.Models", "MassTransit.SagaSample.Models\MassTransit.SagaSample.Models.csproj", "{5A45DF27-F7B1-4223-A97E-2DAEEB6B198E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.SagaSample.Products.Business", "MassTransit.SagaSample.Products.Business\MassTransit.SagaSample.Products.Business.csproj", "{32253E73-477F-4B9D-9B79-1A1E30D4E4D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransit.SagaSample.Products.Business", "MassTransit.SagaSample.Products.Business\MassTransit.SagaSample.Products.Business.csproj", "{32253E73-477F-4B9D-9B79-1A1E30D4E4D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.SagaSample.Warehouse.Business", "MassTransit.SagaSample.Warehouse.Business\MassTransit.SagaSample.Warehouse.Business.csproj", "{BF04BB0D-96F2-4135-927E-5CECFCC3295D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransit.SagaSample.Warehouse.Business", "MassTransit.SagaSample.Warehouse.Business\MassTransit.SagaSample.Warehouse.Business.csproj", "{BF04BB0D-96F2-4135-927E-5CECFCC3295D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

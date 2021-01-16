@@ -3,7 +3,7 @@ using System;
 
 namespace MassTransit.SagaSample.Models
 {
-    public interface IMessage
+    public interface IProductMessage
     {
         Guid CorrelationId { get; }
         Product Product { get; }
